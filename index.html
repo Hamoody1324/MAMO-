@@ -3,10 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dolap Düzenleyici</title>
-
+<title>MAMO – Dolap Düzenleyici</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
 <style>
 body {
     font-family: 'Poppins', sans-serif;
@@ -16,54 +14,93 @@ body {
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1000px;
     margin: auto;
     padding: 20px;
 }
 
 /* HERO */
 .hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 40px;
 }
 
-.hero img {
+.hero .slider {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+}
+
+.hero .slider img {
     width: 100%;
     border-radius: 20px;
 }
 
-.hero h1 {
-    font-size: 32px;
+.thumbnails {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.thumbnails img {
+    width: 60px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border 0.3s;
+}
+
+.thumbnails img.active {
+    border: 2px solid #000;
+}
+
+.hero .info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.hero .info h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.hero .info p {
+    margin-bottom: 15px;
 }
 
 .price {
     font-size: 28px;
     color: #e60023;
-    margin: 10px 0;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
 .btn {
-    background: #000;
-    color: #fff;
+    background: #25d366; /* WhatsApp green */
+    color: white;
     padding: 15px 25px;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
     font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 10px;
 }
 
 .btn:hover {
-    background: #333;
+    background: #128c4a;
 }
 
-/* FEATURES */
+/* Features */
 .features {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 15px;
-    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .card {
@@ -71,121 +108,132 @@ body {
     padding: 20px;
     border-radius: 15px;
     text-align: center;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.05);
 }
 
-/* SECTION */
+/* Section Titles */
 .section {
-    margin-top: 50px;
+    margin-bottom: 40px;
 }
 
 .section h2 {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
-/* REVIEWS */
+/* Reviews */
 .review {
     background: white;
     padding: 15px;
     border-radius: 12px;
-    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.05);
 }
 
-/* FAQ */
-.faq-item {
-    background: white;
-    margin-top: 10px;
-    padding: 15px;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-/* CTA */
+/* Sticky WhatsApp CTA */
 .sticky {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background: black;
+    background: #25d366;
     color: white;
     text-align: center;
     padding: 15px;
     font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    z-index: 100;
+    text-decoration: none;
 }
 
-/* MOBILE */
+.sticky:hover {
+    background: #128c4a;
+}
+
+/* Responsive */
 @media(max-width: 768px){
     .hero {
-        grid-template-columns: 1fr;
-    }
-
-    .features {
-        grid-template-columns: 1fr;
+        flex-direction: column;
     }
 }
 </style>
 </head>
-
 <body>
 
 <div class="container">
 
-<!-- HERO -->
-<div class="hero">
-    <img src="https://via.placeholder.com/500x400" alt="ürün">
+    <!-- HERO -->
+    <div class="hero">
+        <div class="slider">
+            <img id="mainImage" src="https://raw.githubusercontent.com/Hamoody1324/MAMO-/main/image1.jpeg" alt="MAMO Dolap Düzenleyici">
+            <div class="thumbnails">
+                <img src="https://raw.githubusercontent.com/Hamoody1324/MAMO-/main/image1.jpeg" class="active" onclick="changeImage(this)">
+                <img src="https://raw.githubusercontent.com/Hamoody1324/MAMO-/main/image2.jpeg" onclick="changeImage(this)">
+                <img src="https://raw.githubusercontent.com/Hamoody1324/MAMO-/main/image3.jpeg" onclick="changeImage(this)">
+                <img src="https://raw.githubusercontent.com/Hamoody1324/MAMO-/main/image4.jpeg" onclick="changeImage(this)">
+                <img src="https://raw.githubusercontent.com/Hamoody1324/MAMO-/main/image5.jpeg" onclick="changeImage(this)">
+            </div>
+        </div>
 
-    <div>
-        <h1>Dolap Düzenleyici – Daha Fazla Alan, Daha Az Dağınıklık!</h1>
-        <p>Dolabınızı saniyeler içinde düzenleyin ve yerden tasarruf edin.</p>
-
-        <div class="price">₺199</div>
-
-        <button class="btn">Hemen Satın Al</button>
+        <div class="info">
+            <h1>MAMO – Dolap Düzenleyici</h1>
+            <p>Dolabınızı saniyeler içinde düzenleyin ve yerden tasarruf edin. Pratik ve dayanıklı tasarımı ile her dolap için uygundur.</p>
+            <div class="price">₺199</div>
+            <a class="btn" href="https://wa.me/905305190277" target="_blank">WhatsApp'tan Sipariş Ver</a>
+        </div>
     </div>
-</div>
 
-<!-- FEATURES -->
-<div class="features">
-    <div class="card">✔️ Yerden tasarruf</div>
-    <div class="card">✔️ Katlanabilir tasarım</div>
-    <div class="card">✔️ Dayanıklı malzeme</div>
-</div>
+    <!-- Features -->
+    <div class="section features">
+        <div class="card">✔️ Yerden Tasarruf Sağlar</div>
+        <div class="card">✔️ Katlanabilir ve Pratik Kullanım</div>
+        <div class="card">✔️ Dayanıklı ve Uzun Ömürlü</div>
+        <div class="card">✔️ Dolabınızı Düzenli Gösterir</div>
+        <div class="card">✔️ Her Türlü Kıyafet ve Eşya İçin Uygun</div>
+    </div>
 
-<!-- DESCRIPTION -->
-<div class="section">
-    <h2>Ürün Açıklaması</h2>
-    <p>
-        Bu dolap düzenleyici sayesinde kıyafetlerinizi, çarşaflarınızı ve diğer eşyalarınızı 
-        kolayca organize edebilirsiniz. Dağınıklığa son verin ve dolabınızda ekstra alan kazanın.
-    </p>
-</div>
+    <!-- How to Use -->
+    <div class="section">
+        <h2>Nasıl Kullanılır?</h2>
+        <ol>
+            <li>Ürünü açın ve dolabınıza yerleştirin.</li>
+            <li>Kıyafetlerinizi düzenli şekilde içine koyun.</li>
+            <li>Daha fazla alanın keyfini çıkarın!</li>
+        </ol>
+    </div>
 
-<!-- HOW -->
-<div class="section">
-    <h2>Nasıl Kullanılır?</h2>
-    <p>1. Ürünü açın<br>2. Dolaba yerleştirin<br>3. Eşyalarınızı düzenleyin</p>
-</div>
+    <!-- Reviews -->
+    <div class="section">
+        <h2>Müşteri Yorumları</h2>
+        <div class="review">⭐⭐⭐⭐⭐ "Dolabım artık çok daha düzenli, kesinlikle tavsiye ederim!"</div>
+        <div class="review">⭐⭐⭐⭐⭐ "Beklediğimden daha kaliteli çıktı, çok memnun kaldım."</div>
+    </div>
 
-<!-- REVIEWS -->
-<div class="section">
-    <h2>Müşteri Yorumları</h2>
-
-    <div class="review">⭐⭐⭐⭐⭐ Dolabım artık çok düzenli!</div>
-    <div class="review">⭐⭐⭐⭐⭐ Kalitesi çok iyi, tavsiye ederim.</div>
-</div>
-
-<!-- FAQ -->
-<div class="section">
-    <h2>Sıkça Sorulan Sorular</h2>
-
-    <div class="faq-item">Kargo ne kadar sürer? → 1-3 iş günü</div>
-    <div class="faq-item">İade var mı? → Evet, kolay iade</div>
-</div>
+    <!-- FAQ -->
+    <div class="section">
+        <h2>Sıkça Sorulan Sorular</h2>
+        <div class="review">📦 Kargo süresi: 1-3 iş günü</div>
+        <div class="review">💳 Güvenli ödeme ve kolay iade</div>
+    </div>
 
 </div>
 
-<!-- STICKY BUTTON -->
-<div class="sticky">
-    🔥 Şimdi Sipariş Ver
-</div>
+<!-- Sticky WhatsApp Button -->
+<a class="sticky" href="https://wa.me/905305190277" target="_blank">
+    🟢 WhatsApp'tan Hemen Sipariş Ver
+</a>
+
+<script>
+// Image gallery
+function changeImage(element){
+    document.getElementById("mainImage").src = element.src;
+
+    // remove active class from all
+    const thumbs = document.querySelectorAll('.thumbnails img');
+    thumbs.forEach(t => t.classList.remove('active'));
+
+    element.classList.add('active');
+}
+</script>
 
 </body>
 </html>
