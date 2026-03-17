@@ -24,8 +24,7 @@
     <h1>MAMO</h1>
 
     <div class="slider">
-      <!-- Replace src="" with your GitHub image URLs -->
-      <img src="" id="slide" alt="MAMO Ürün">
+      <img src="https://raw.githubusercontent.com/Hamoody1324/MAMO-/main/WhatsApp%20Image%202026-03-18%20at%201.02.50%20AM%20(1).jpeg" id="slide" alt="MAMO Ürün">
     </div>
 
     <div class="price">₺<span id="currentPrice"></span></div>
@@ -48,9 +47,8 @@
   <div class="section">
     <h2>Öncesi / Sonrası</h2>
     <div class="before-after">
-      <!-- Replace src="" with your GitHub image URLs for before/after -->
-      <img src="" alt="Öncesi">
-      <img src="" alt="Sonrası">
+      <img src="https://raw.githubusercontent.com/Hamoody1324/MAMO-/main/WhatsApp%20Image%202026-03-18%20at%201.02.50%20AM%20(2).jpeg" alt="Öncesi">
+      <img src="https://raw.githubusercontent.com/Hamoody1324/MAMO-/main/WhatsApp%20Image%202026-03-18%20at%201.02.50%20AM%20(3).jpeg" alt="Sonrası">
     </div>
   </div>
 
@@ -68,15 +66,19 @@
   document.getElementById('oldPrice').textContent = oldPrice;
   document.getElementById('currentPrice').textContent = currentPrice;
 
-  // Image slider (replace "" with your GitHub image URLs)
-  const images = ["", "", "", "", ""];
+  // Image slider
+  const images = [
+    "https://raw.githubusercontent.com/Hamoody1324/MAMO-/main/WhatsApp%20Image%202026-03-18%20at%201.02.50%20AM%20(1).jpeg",
+    "https://raw.githubusercontent.com/Hamoody1324/MAMO-/main/WhatsApp%20Image%202026-03-18%20at%201.02.50%20AM.jpeg",
+    "https://raw.githubusercontent.com/Hamoody1324/MAMO-/main/WhatsApp%20Image%202026-03-18%20at%201.02.51%20AM.jpeg",
+    "https://raw.githubusercontent.com/Hamoody1324/MAMO-/main/WhatsApp%20Image%202026-03-18%20at%201.02.50%20AM%20(2).jpeg",
+    "https://raw.githubusercontent.com/Hamoody1324/MAMO-/main/WhatsApp%20Image%202026-03-18%20at%201.02.50%20AM%20(3).jpeg"
+  ];
   let i = 0;
   const slideImg = document.getElementById('slide');
   setInterval(() => {
-    if(images[i] !== "") {
-      slideImg.src = images[i];
-    }
     i = (i + 1) % images.length;
+    slideImg.src = images[i];
   }, 3000);
 </script>
 
