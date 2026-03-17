@@ -1,82 +1,146 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<title>MAMO</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-  body { margin:0; font-family: Arial, sans-serif; background:#f5f5f5; }
-  .hero { position: relative; max-width: 600px; margin: 0 auto; }
-  .hero img { width: 100%; border-radius:10px; }
-  .container { text-align: center; padding: 20px; max-width: 600px; margin: auto; }
-  h1 { font-size: 32px; margin: 15px 0; }
-  .price { font-size: 28px; color: #e53935; font-weight: bold; margin: 10px 0; }
-  .old-price { font-size: 18px; color: #999; text-decoration: line-through; margin-bottom:10px; }
-  .btn { display: inline-block; background:#25D366; color:white; font-size:20px; padding:15px 25px; text-decoration:none; border-radius:8px; margin:20px 0; transition: 0.2s; }
-  .btn:hover { background:#1ebe57; }
-  .section { background:white; border-radius:10px; margin:15px 0; padding:20px; text-align:left; }
-  .section h2 { text-align:center; margin-bottom:15px; }
-  .section p { margin:10px 0; }
-  @media(max-width: 600px){
-    .hero img { width:100%; }
-    .container, .section { padding:15px; }
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolap Düzenleyici</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f7f7f7;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+        .hero {
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 12px;
+        }
+        h1 {
+            color: #111;
+        }
+        .section {
+            background: white;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 12px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .reviews {
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        .cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #000;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .cta:hover {
+            background: #333;
+        }
+    </style>
 </head>
 <body>
 
-<div class="hero">
-  <img id="slide" src="https://raw.githubusercontent.com/Hamoody1324/MAMO-/main/image1.jpeg" alt="MAMO Ürün">
-</div>
-
 <div class="container">
-  <h1>MAMO</h1>
-  <div class="price">₺<span id="currentPrice"></span></div>
-  <div class="old-price">₺<span id="oldPrice"></span></div>
-  <a class="btn" href="https://wa.me/905305190277" target="_blank">WhatsApp ile Sipariş Ver</a>
+
+    <!-- Hero -->
+    <div class="hero">
+        <h1>Dolap Düzenleyici – Daha Fazla Alan, Daha Az Dağınıklık!</h1>
+        <p>Dolabınızda yer açın ve eşyalarınızı düzenli tutun.</p>
+    </div>
+
+    <!-- Açıklama -->
+    <div class="section">
+        <h2>Ürün Açıklaması</h2>
+        <p>
+            Bu pratik dolap düzenleyici sayesinde kıyafetlerinizi, çarşaflarınızı 
+            ve diğer eşyalarınızı kolayca organize edebilirsiniz.
+        </p>
+    </div>
+
+    <!-- Neden -->
+    <div class="section">
+        <h2>Neden Bu Ürünü Seçmelisiniz?</h2>
+        <ul>
+            <li>✔️ Yerden tasarruf sağlar</li>
+            <li>✔️ Katlanabilir ve pratik kullanım</li>
+            <li>✔️ Dayanıklı ve uzun ömürlü malzeme</li>
+            <li>✔️ Dolabınızı düzenli ve temiz gösterir</li>
+            <li>✔️ Her türlü kıyafet ve eşya için uygun</li>
+        </ul>
+    </div>
+
+    <!-- Özellikler -->
+    <div class="section">
+        <h2>Ürün Özellikleri</h2>
+        <ul>
+            <li>Malzeme: Yüksek kaliteli</li>
+            <li>Boyut: Standart</li>
+            <li>Renk: Çoklu seçenek</li>
+            <li>Kullanım: Dolap içi, raf, çekmece</li>
+        </ul>
+    </div>
+
+    <!-- Kullanım -->
+    <div class="section">
+        <h2>Nasıl Kullanılır?</h2>
+        <ol>
+            <li>Ürünü açın ve dolabınıza yerleştirin</li>
+            <li>Kıyafetlerinizi düzenli şekilde içine koyun</li>
+            <li>Daha fazla alanın keyfini çıkarın!</li>
+        </ol>
+    </div>
+
+    <!-- Yorumlar -->
+    <div class="section">
+        <h2>Müşteri Yorumları</h2>
+
+        <div class="reviews">
+            ⭐⭐⭐⭐⭐ <br>
+            “Dolabım artık çok daha düzenli, kesinlikle tavsiye ederim!”
+        </div>
+
+        <div class="reviews">
+            ⭐⭐⭐⭐⭐ <br>
+            “Beklediğimden daha kaliteli çıktı, çok memnun kaldım.”
+        </div>
+
+    </div>
+
+    <!-- Kargo -->
+    <div class="section">
+        <h2>Kargo & Ödeme</h2>
+        <ul>
+            <li>📦 Hızlı kargo (1-3 iş günü)</li>
+            <li>💳 Güvenli ödeme</li>
+            <li>🔄 Kolay iade</li>
+        </ul>
+    </div>
+
 </div>
 
-<div class="section">
-  <h2>Ürün Açıklaması</h2>
-  <p>MAMO ile dolaplarınızı düzenleyin, alan kazanın ve dağınıklığı ortadan kaldırın.</p>
+<!-- Sticky Button -->
+<div class="cta">
+    Hemen Satın Al
 </div>
-
-<div class="section">
-  <h2>Bu Ürüne Neden İhtiyacınız Var?</h2>
-  <p>✔ Dağınık dolaplarınızı düzenli hale getirir</p>
-  <p>✔ Anında yer kazandırır</p>
-  <p>✔ Katlayıp saklaması çok kolay</p>
-</div>
-
-<div class="section">
-  <h2>Müşteri Yorumları</h2>
-  <p>⭐⭐⭐⭐⭐ “Dolabım tamamen değişti!”</p>
-  <p>⭐⭐⭐⭐⭐ “Çok kullanışlı ve basit”</p>
-  <p>⭐⭐⭐⭐⭐ “Kesinlikle tavsiye ederim!”</p>
-</div>
-
-<script>
-  // Random price
-  const oldPrice = Math.floor(Math.random() * (799-699+1)) + 699;
-  const currentPrice = Math.floor(Math.random() * (499-399+1)) + 399;
-  document.getElementById('oldPrice').textContent = oldPrice;
-  document.getElementById('currentPrice').textContent = currentPrice;
-
-  // Slider
-  const images = [
-    "https://raw.githubusercontent.com/Hamoody1324/MAMO-/main/image1.jpeg",
-    "https://raw.githubusercontent.com/Hamoody1324/MAMO-/main/image2.jpeg",
-    "https://raw.githubusercontent.com/Hamoody1324/MAMO-/main/image3.jpeg",
-    "https://raw.githubusercontent.com/Hamoody1324/MAMO-/main/image4.jpeg",
-    "https://raw.githubusercontent.com/Hamoody1324/MAMO-/main/image5.jpeg"
-  ];
-  let i = 0;
-  const slideImg = document.getElementById('slide');
-  setInterval(() => {
-    i = (i + 1) % images.length;
-    slideImg.src = images[i];
-  }, 3000);
-</script>
 
 </body>
 </html>
